@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-title>signup</ion-title> -->
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="backgroundi">
+
+    <ion-card class="ion-no-margin">
+
+        <ion-card-header>
+            <ion-card-title>
+              Sign Up
+            </ion-card-title>
+            <ion-card-subtitle>
+              Create Your account by filling
+up the form
+              </ion-card-subtitle>
+        </ion-card-header>
+
+       <ion-card-content>
+           <ion-item>
+            <ion-input type="text" [(ngModel)]="username" required="true" placeholder="FullName">
+                 <ion-icon name="person" ></ion-icon>
+               </ion-input>
+           </ion-item>
+           <ion-item>
+            <ion-input type="password" [(ngModel)]="password" required="true" placeholder="Password">
+                 <ion-icon name="lock-closed" ></ion-icon>
+               </ion-input>
+           </ion-item>
+           <ion-item>
+            <ion-input type="password" [(ngModel)]="cpassword" required="true" placeholder="Confirm Password">
+                 <ion-icon name="lock-closed" ></ion-icon>
+               </ion-input>
+           </ion-item>
+           <ion-item>
+            <ion-input type="tel" [(ngModel)]="phonenumber" required="true" placeholder="Phone No.">
+                 <ion-icon name="call" ></ion-icon>
+               </ion-input>
+           </ion-item>
+           <br>
+            <ion-label position="floating" class="cmt">Profile Photo</ion-label> <br><br>
+          <input type="file" *ngIf="!imageURL" (change)="fileChanged($event)"/>
+          <ion-card>
+            <img *ngIf="imageURL" src="https://ucarecdn.com/{{ imageURL }}/" />
+            </ion-card>
+          
+           
+
+
+           <div class="sign-btn-wrap">
+              <ion-button  shape="round"  fill="solid" class="sign-btn" (click)="register()">Sign Up</ion-button>
+             </div>
+
+             <div class="text-tag">
+             <span>Sign Up with</span>
+             </div>
+
+             <div class="social-btns">
+                 <ion-button fill="clear"  class="facebookbtn ion-no-padding">
+               <ion-img src="assets/images/facebook.png"></ion-img>
+                 </ion-button>
+                 <ion-button fill="clear"  class="googlebtn ion-no-padding">
+               <ion-img src="assets/images/google.png"></ion-img>
+                 </ion-button>
+                 <ion-button fill="clear"  class="applebtn ion-no-padding">
+               <ion-img src="assets/images/apple.png"></ion-img>
+                 </ion-button>
+
+               </div>
+
+       </ion-card-content>
+
+    </ion-card>
+
+    <div class="ion-card-footer" lines='none'>
+      <span>Already have an account?</span><a routerLink='/login' class="ion-no-padding">Sign In</a>
+       </div>
+
+</ion-content>
